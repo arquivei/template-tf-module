@@ -51,6 +51,7 @@ module "basic-subnetwork" {
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.15.0 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | ~> 3.67 |
 
 ## Providers
@@ -82,7 +83,7 @@ No modules.
 | <a name="input_network"></a> [network](#input\_network) | Name of self-link to the VPC this subnet will be linked to. Defaults to 'default' network | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Network project name | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region in which subnet will be created. Defaults to the region in the terraform provider | `string` | `""` | no |
-| <a name="input_secondary_ranges"></a> [secondary\_ranges](#input\_secondary\_ranges) | Create up to 5 alternative CIDR range to represent this subnetwork | `list` | `[]` | no |
+| <a name="input_secondary_ranges"></a> [secondary\_ranges](#input\_secondary\_ranges) | Create up to 5 alternative CIDR range to represent this subnetwork | `list(any)` | `[]` | no |
 
 ## Outputs
 
@@ -93,6 +94,7 @@ No modules.
 | <a name="output_name"></a> [name](#output\_name) | Subnetwork name. |
 | <a name="output_secondary_range"></a> [secondary\_range](#output\_secondary\_range) | List of names for the secondary ranges created. |
 | <a name="output_self_link"></a> [self\_link](#output\_self\_link) | The URI of the created resource. |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 

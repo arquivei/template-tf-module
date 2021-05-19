@@ -12,12 +12,7 @@ To more infos, read our Notion Page about how we use [Terraform](https://www.not
 
 - `.editorconfig`, `.gitignore` and `.gitattributes` files to module root path
 
-- Test framework # Beta #
-
-  - [Terratest](https://github.com/gruntwork-io/terratest)
-  - `test` directory with an example test based on test framework selection
-
-- `.pre-commit-config.yaml` for `terraform fmt`, `terraform-docs`, `check-merge-conflict` and (`go fmt`, `golint`) / `rubocop`
+- `.pre-commit-config.yaml` for `terraform fmt`, `terraform-docs` and `check-merge-conflict`
 
 - `example` directory with module usage tf files
 
@@ -25,12 +20,9 @@ To more infos, read our Notion Page about how we use [Terraform](https://www.not
 
 ## Prerequisites
 
-- [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform) (v0.14.x)
+- [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform) (v0.15.x)
 - [terraform-docs](https://github.com/segmentio/terraform-docs)
 - [pre-commit](https://pre-commit.com/#install)
-- [Terratest](https://github.com/gruntwork-io/terratest)
-  - [golang](https://golang.org/doc/install#install) (`pro tip: use gvm`)
-  - [golint](https://github.com/golang/lint#installation) 
 
 ---
 
@@ -62,13 +54,6 @@ To use this template, you need:
     pre-commit install
     ```
 
-  - For golang tests, get below libs
-
-    ```sh
-    go get github.com/gruntwork-io/terratest/modules/terraform
-    go get github.com/stretchr/testify/assert
-    ```
-
   - The file `README.MD` is a template of a readme file for terraform modules. Fill it with the requested information about the module.
 
 ---
@@ -91,12 +76,7 @@ Structure of files and folders for this project.
 ├── README.md
 ├── resources.tf
 ├── TEMPLATE-DOC.md
-├── test
-│   └── terratest
-│       └── example_test.go
 └── variables.tf
-
-3 directories, 13 files
 
 ```
 ---
