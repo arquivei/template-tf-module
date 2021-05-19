@@ -1,74 +1,106 @@
-# <%= module_name %>
+# Terraform Module Template
 
-## Overview
+Template for new Terraform module projects, following the patterns. 
 
-<%= description %>
+To more infos, read our Notion Page about how we use [Terraform](https://www.notion.so/arquiveiofficial/Terraform-6fc72d7181a34b66899306c4390fb6bd)
 
-## Usage
+---
 
-```hcl
-  module "module_exemple" {
-    source  = "Arquivei/modules/module_exemple"
-    version = "1.0"
-```
+## Features
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Requirements
+- Files `main.tf`, `variables.tf`,`outputs.tf` files to module root path
 
-| Name | Version |
-| ---- | ------- |
-| null | ~> 2.1  |
+- `.editorconfig`, `.gitignore` and `.gitattributes` files to module root path
 
-## Providers
+- Test framework # Beta #
 
-| Name | Version |
-| ---- | ------- |
-| null | ~> 2.1  |
+  - [Terratest](https://github.com/gruntwork-io/terratest)
+  - `test` directory with an example test based on test framework selection
 
-## Inputs
+- `.pre-commit-config.yaml` for `terraform fmt`, `terraform-docs`, `check-merge-conflict` and (`go fmt`, `golint`) / `rubocop`
 
-| Name      | Description             | Type     | Default           | Required |
-| --------- | ----------------------- | -------- | ----------------- | :------: |
-| mandatory | this field is mandatory | `string` | n/a               |   yes    |
-| optional  | this field is optional  | `string` | `"default_value"` |    no    |
+- `example` directory with module usage tf files
 
-## Outputs
+---
 
-| Name         | Description                  |
-| ------------ | ---------------------------- |
-| output\_name | description for output\_name |
+## Prerequisites
 
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
-## Development
-
-### Prerequisites
-
-- [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform)
+- [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform) (v0.14.x)
 - [terraform-docs](https://github.com/segmentio/terraform-docs)
 - [pre-commit](https://pre-commit.com/#install)
-- [golang](https://golang.org/doc/install#install)
-- [golint](https://github.com/golang/lint#installation)
+- [Terratest](https://github.com/gruntwork-io/terratest)
+  - [golang](https://golang.org/doc/install#install) (`pro tip: use gvm`)
+  - [golint](https://github.com/golang/lint#installation) 
 
-### Configurations
+---
 
-- Configure pre-commit hooks
-```sh
-pre-commit install
-```
+## How to start using this template?
 
-- Configure golang deps for tests
-```sh
-> go get github.com/gruntwork-io/terratest/modules/terraform
-> go get github.com/stretchr/testify/assert
-```
+To use this template, you need:
 
-### Tests
+  - Download the code 
 
-- Tests are available in `test` directory
+    ```sh
+    git clone URL_REPO
+    ```
+
+  - Delete the Git configuration folder, using the command inside the folder created by git clone 
   
-- In the test directory, run the below command
-```sh
-go test
-```
+    ```sh
+    rm -fr .git
+    ```
 
+  - On the module's root path, Initialize a new git repository
+
+    ```sh
+    git init
+    ```
+
+  - For ativate pre-commit, on the module's root path, install pre-commit hooks
+
+    ```sh
+    pre-commit install
+    ```
+
+  - For golang tests, get below libs
+
+    ```sh
+    go get github.com/gruntwork-io/terratest/modules/terraform
+    go get github.com/stretchr/testify/assert
+    ```
+
+  - The file `README.MD` is a template of a readme file for terraform modules. Fill it with the requested information about the module.
+
+---
+
+## Struture
+
+Structure of files and folders for this project.
+
+```
+.
+├── example
+│   ├── main.tf
+│   ├── outputs.tf
+│   ├── README.md
+│   ├── subnets.tf
+│   ├── terraform.tfvars_exemple
+│   └── variables.tf
+├── main.tf
+├── outputs.tf
+├── README.md
+├── resources.tf
+├── TEMPLATE-DOC.md
+├── test
+│   └── terratest
+│       └── example_test.go
+└── variables.tf
+
+3 directories, 13 files
+
+```
+---
+
+### License
+
+MIT
