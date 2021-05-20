@@ -33,7 +33,7 @@ To use this template, you need:
   - Download the code 
 
     ```sh
-    git clone URL_REPO
+    git clone --depth 1 URL_REPO NEW_MODULE_NAME
     ```
 
   - Delete the Git configuration folder, using the command inside the folder created by git clone 
