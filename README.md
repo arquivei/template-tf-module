@@ -2,7 +2,7 @@
 
 Template for new Terraform module projects, following the patterns. 
 
-To more infos, read our Notion Page about how we use [Terraform](https://www.notion.so/arquiveiofficial/Terraform-6fc72d7181a34b66899306c4390fb6bd)
+To more infos, read our Notion Page about how we use [Terraform Modules](https://www.notion.so/arquiveiofficial/Terraform-6fc72d7181a34b66899306c4390fb6bd#fd948005dd774a7398103e625f311366)
 
 ---
 
@@ -34,12 +34,6 @@ To use this template, you need:
 
     ```sh
     git clone --depth 1 URL_REPO NEW_MODULE_NAME
-    ```
-
-  - Delete the Git configuration folder, using the command inside the folder created by git clone 
-  
-    ```sh
-    rm -fr .git
     ```
 
   - On the module's root path, Initialize a new git repository
